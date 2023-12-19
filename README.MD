@@ -9,23 +9,24 @@ main.py是主要的用于训练的代码。test.py是用于预测新数据的代
 
 ### 数据详细操作
 1. 变成CSV文件（utf-8,逗号分隔），这个可以用将所有数据另外保存到一个excel里面，保存时候选择格式的方法得到  
-2. 训练时，需要去掉这几栏：网元IP，框号，操作状态，ONU TYPE，最后一次上线，离线时间，最后一次离线原因，保存数据前直接excel选中列去掉  
-可以看我的ready_1.csv作为参考
+2. 训练时，##需要去掉这几栏：网元IP，框号，操作状态，ONU TYPE，最后一次上线，离线时间，最后一次离线原因，保存数据前直接excel选中列去掉，最新更新，和测试一样，不需要去掉栏目啦
 3. 测试时不用去掉那几栏，只需要excel转csv即可
 
 ### 模型(目前能用的只有XGB和MLP--即参数xgb和reg对应的模型)
 deep model:  
-MLP: 270/1024, 26.4%  
-xgb model: 531/1024, 51%  
-目前，模型有Xgbboost, MLP神经网络，LSTM时序模型，Xgb模型表现最好，应该可以满足要求
+MLP: unknown
+xgb model: unknown
+LSTM model：74/880
+目前，模型有Xgbboost, MLP神经网络，LSTM时序模型，LSTM经过训练可以检测出880个异常值中的74个
 
 ### 使用
 在根目录下打开电脑命令行（也就是点进去大文件夹）电脑命令行依次输入如下命令：  
 `conda create -n forecasting python=3.8`  
 `conda activate forecasting`  
 `pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple`  
-`python test.py`  
-目前保持test.py的配置不要动，这个是预测10.16数据的
+`python main_v2.py`  
+`python test_v2.py`  
+目前保持test_v2.py的配置不要动
 
 ###预测结果
 结果在save_results文件夹下面，叫results.csv，也可以自己跑  
