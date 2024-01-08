@@ -11,15 +11,15 @@ main_v2.py, main.py是主要的用于训练的代码。test.py, test_v2.py是用
 ### 数据详细操作
 1. 变成CSV文件（utf-8,逗号分隔），这个可以用将所有数据另外保存到一个excel里面，保存时候选择格式的方法得到  
 2. 训练时，##需要去掉这几栏：网元IP，框号，操作状态，ONU TYPE，最后一次上线，离线时间，最后一次离线原因，保存数据前直接excel选中列去掉，
-最新更新，和测试一样，不需要去掉栏目啦  
+最新更新，和测试一样，##不需要去掉栏目啦  
 3. 测试时不用去掉那几栏，只需要excel转csv即可
 
-### 模型(目前能用的只有XGB和MLP--即参数xgb和reg对应的模型)
+### 模型(目前能用的只有LSTM，LSTM-attention（LSTM_v2)，XGB和MLP--即参数xgb和reg对应的模型您可以自行研究)
 deep model:  
 MLP: unknown
 xgb model: unknown
-LSTM model：74/880
-目前，模型有Xgbboost, MLP神经网络，LSTM时序模型，LSTM经过训练可以检测出880个异常值中的74个
+LSTM model：27%
+目前，模型有Xgbboost, MLP神经网络，LSTM时序模型，LSTM经过训练准确率达到27%
 
 ### 使用
 在根目录下打开电脑命令行（也就是点进去大文件夹）电脑命令行依次输入如下命令：  
